@@ -11,7 +11,7 @@ const publicPath = '/';
 
 const options = {
   entry: [
-    path.resolve(__dirname, 'src/index.js'),
+    path.resolve(__dirname, 'src/blog-post.js'),
   ],
   output: {
     publicPath,
@@ -28,6 +28,18 @@ const options = {
         test: /\.jsx?$/,
         loader: 'babel-loader'
       },
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: "style-loader" // creates style nodes from JS strings
+          }, {
+            loader: "css-loader" // translates CSS into CommonJS
+          }, {
+            loader: "sass-loader" // compiles Sass to CSS
+          }
+        ]
+      }
     ]
   },
   plugins: [
@@ -46,7 +58,13 @@ const options = {
         )
       };
     })())
-  ],
+  ].concat(
+    isDevelopmentMode ? [] : [
+      new webpack.optimize.UglifyJsPlugin({
+        compress: { warnings: false }
+      })
+    ]
+  ),
   devServer: {
     publicPath,
     host: '0.0.0.0',

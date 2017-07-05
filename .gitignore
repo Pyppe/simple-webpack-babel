@@ -9,3 +9,4 @@ project/project
 node_modules
 dist
 src/lib/bundle
+yarn.lock

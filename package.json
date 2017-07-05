@@ -1,5 +1,5 @@
 {
-  "name": "scala-js-webpack",
+  "name": "simple-weback-babel",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,7 @@
     "build": "yarn run -s _webpack -- --bail",
     "build:production": "NODE_ENV=production yarn run -s _webpack -- --bail"
   },
-  "author": "Damian Pieczynski",
+  "author": "Pyry Lahti",
   "license": "MIT",
   "dependencies": {
     "babel-cli": "^6.24.1",
@@ -22,7 +22,11 @@
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-latest": "^6.24.1",
+    "css-loader": "^0.28.4",
+    "node-sass": "^4.5.3",
     "preact": "^8.1.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
     "webpack": "3.0.0",
     "webpack-dev-server": "^2.4.5"
   }
